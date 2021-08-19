@@ -12,6 +12,12 @@ RUN systemctl restart apache2
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-EXPOSE 9300
+RUN composer install
 
-CMD [ "bash" ]
+RUN cp .env.example .env
+
+RUN php artisan key:generate
+
+EXPOSE 8000
+
+CMD [ "bash", "php artisan serve" ]
