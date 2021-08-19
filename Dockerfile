@@ -7,7 +7,7 @@ RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -qy \
 
 RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -yq
 
-RUN DEBIAN_FRONTEND=noninteractive apt install -yq openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
+# RUN DEBIAN_FRONTEND=noninteractive apt install -yq openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
 
 RUN systemctl restart apache2
 
