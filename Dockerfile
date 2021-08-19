@@ -2,14 +2,12 @@ FROM ubuntu:latest
 
 COPY . .
 
-RUN apt-get update && apt-get install -y \
+RUN  DEBIAN_FRONTEND=noninteractiveapt-get update && apt-get install -y \
     php libapache2-mod-php
 
-RUN apt install systemctl -y
+RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -y
 
-RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-
-RUN apt install -y openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
+RUN DEBIAN_FRONTEND=noninteractive apt install -y openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
 
 RUN systemctl restart apache2
 
