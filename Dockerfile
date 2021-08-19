@@ -2,12 +2,12 @@ FROM ubuntu:latest
 
 COPY . .
 
-RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
+RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -qy \
     php libapache2-mod-php
 
-RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -y
+RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -yq
 
-RUN DEBIAN_FRONTEND=noninteractive apt install -y openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
+RUN DEBIAN_FRONTEND=noninteractive apt install -yq openssl php-common php-curl php-json php-mbstring php-mysql php-xml php-zip
 
 RUN systemctl restart apache2
 
