@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     git \
     nano \
-    curl
+    curl \
+    docker-php-ext-install
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
