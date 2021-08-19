@@ -2,8 +2,9 @@ FROM ubuntu:latest
 
 COPY . .
 
-RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -qy \
-    php libapache2-mod-php
+RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -qy php 
+    
+# libapache2-mod-php
 
 RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -yq
 
