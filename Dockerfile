@@ -12,5 +12,6 @@ RUN systemctl restart apache2
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+EXPOSE 9300
 
 CMD [ "bash" ]
