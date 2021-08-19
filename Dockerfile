@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 COPY . .
 
-RUN  DEBIAN_FRONTEND=noninteractiveapt-get update && apt-get install -y \
+RUN  DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y \
     php libapache2-mod-php
 
 RUN DEBIAN_FRONTEND=noninteractive apt install systemctl -y
