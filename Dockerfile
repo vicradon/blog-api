@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -yq openssl php-common php-curl p
 
 RUN systemctl restart apache2
 
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN DEBIAN_FRONTEND=noninteractive -yq curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 
 CMD [ "bash" ]
